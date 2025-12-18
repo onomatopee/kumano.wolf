@@ -1,0 +1,19 @@
+@import "util"
+
+@media screen and (min-width: 960px) // pc
+  body
+    background-attachment: fixed
+    background-image: url("../img/background_pc.jpg")
+    background-size: contain
+  main
+    +main
+
+@media screen and (max-width: 960px) // smartphone
+  body
+    //background-attachment: fixed
+    background-image: url("../img/background_mobile.jpg")
+    background-size: cover
+    background-repeat: no-repeat
+    height: 110vh
+  main
+    +main

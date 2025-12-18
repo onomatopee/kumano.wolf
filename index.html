@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head lang="ja">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <title>寮生大会人狼</title>
+
+  <!-- webfont settings -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'dzk6neq',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div id="playGround">
+      <h1>寮生大会<span>人狼</span></h1>
+      <h2>ルール</h2>
+      <h3>フリーライダー陣営（FR）</h3>
+      <p>フリーライダー……人狼。提起者にはなれない</p>
+      <p>SN……狂人。採決拒否を提起されると死ぬ</p>
+      <br>
+
+      <h3>FRアンチ陣営（SC）</h3>
+      <p>SC長……占い師</p>
+      <p>デスドラ……霊媒師。夜をひとつ消せる</p>
+      <p>JK部長……騎士</p>
+      <p>部長委員長……市民。役職の重複はない</p>
+      <p>B3……お香を焚いて誰かのはたらきを2日止められる</p>
+      <p>議長団……採決拒否を提起できる</p>
+      <br>
+
+      <h3>順番</h3>
+      <p>議論……提起者が誰を強制退寮にするか、提起をはじめる。</p>
+      <p>採決……誰が強制退寮になるか決める。同数なら退寮なし</p>
+      <p>休憩……フリーライダーにより、過労でSCの誰かが死ぬ</p>
+      <br>
+      <button onclick="gameStart()">はじめる</button>
+    </div>
+  </main>
+</body>
+
+</html>

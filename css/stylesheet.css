@@ -1,0 +1,70 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, a, button {
+  font-family: "Noto Sans JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+span {
+  color: red;
+}
+
+h1 {
+  font-size: 5vh;
+}
+
+h2 {
+  font-size: 4vh;
+}
+
+h3 {
+  font-size: 3vh;
+}
+
+p {
+  font-size: 2vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    background-attachment: fixed;
+    background-image: url("../img/background_pc.jpg");
+    background-size: contain;
+  }
+  main {
+    width: 70vw;
+    background-color: black;
+    border-radius: 3vw;
+    padding: 5vh 5vw;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    color: #C6C6C6;
+  }
+}
+@media screen and (max-width: 960px) {
+  body {
+    background-image: url("../img/background_mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110vh;
+  }
+  main {
+    width: 70vw;
+    background-color: black;
+    border-radius: 3vw;
+    padding: 5vh 5vw;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    color: #C6C6C6;
+  }
+}/*# sourceMappingURL=stylesheet.css.map */

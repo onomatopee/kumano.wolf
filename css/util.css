@@ -1,0 +1,36 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, a, button {
+  font-family: "Noto Sans JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+span {
+  color: red;
+}
+
+h1 {
+  font-size: 5vh;
+}
+
+h2 {
+  font-size: 4vh;
+}
+
+h3 {
+  font-size: 3vh;
+}
+
+p {
+  font-size: 2vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=util.css.map */
