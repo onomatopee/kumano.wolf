@@ -6,6 +6,6 @@ function shuffle(array) {
   return array;
 }
 
-function hello() {
+function h() {
   console.log("hello");
 }

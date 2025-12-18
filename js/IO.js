@@ -1,6 +1,7 @@
 let playGround = document.getElementById("playGround");
 
 function playGroundWrite(str) {
+  //console.log(str);
   playGround.innerHTML = str; 
 }
 
@@ -46,11 +47,9 @@ function getAttr() {
   for (let i = 0; i < attrNum["議長団"]; i++) attrList.push("議長団");
 
   shuffle(attrList);
-  console.log(attrNum);
 }
 
 function nameInput() {
-  console.log(attrList.length);
   const ryoseiNum = attrList.length;
   let str = "<h2>名前を入力</h2>";
   for (let i = 0; i < ryoseiNum; i++) {
@@ -63,7 +62,7 @@ function nameInput() {
 function getName() {
   const ryoseiNum = attrList.length;
   for (let i = 0; i < ryoseiNum; i++) {
-    const name = document.getElementById(`name${i}`);
+    const name = document.getElementById(`name${i}`).value;
     nameList.push(name);
   }
   generateRyosei();
@@ -72,7 +71,53 @@ function getName() {
 function discussion() {
   const claimer = chooseClaimer();
   const claimerName = nameList[claimer];
+  let str = `<h2>提起者は${claimerName}です！</h2>
+  <button onclick="vote()">投票にすすむ</button>
+  `;
+  playGroundWrite(str);
+}
 
+let voteRec = [];
+function vote() {
+  const ryoseiNum = attrList.length;
+  for (let i = 0; i < ryoseiNum; i++) voteRec[i] = 0;
+  ryoseiVote(0,false);
+}
+
+function ryoseiVote(who,identified) {
+  const ryoseiNum = attrList.length;
+  if (who >= ryoseiNum) {
+    voteOpen();
+    return;
+  }
+  else if (aliveList[who] && identified) {
+    str = `<h2>誰を強制退寮にしますか？</h2>`;
+    for (let i = 0; i < ryoseiNum; i++) {
+      if (aliveList[i]) str += `<button onclick=voteTo(${who},${i})>${nameList[i]}</button><br>`;
+    }
+  } else if (aliveList[who]) {
+    str = `<h2>あなたは${nameList[who]}ですか？</h2>
+    <button onclick="ryoseiVote(${who},true)">はい</button>`;
+  }
+  else {
+    ryoseiVote(who+1,false);
+  }
+  playGroundWrite(str);
+}
+
+function voteTo(who,ryosei) {
+  voteRec[ryosei]++;
+  ryoseiVote(who+1,false);
+}
+
+function voteOpen() {
+  let tairyo = 0;
+  for (let i = 0; i < voteRec.length; i++) if (voteRec[i] > voteRec[tairyo]) tairyo = i;
+  goodbye(tairyo);
+  const str = `<h2>${nameList[tairyo]}さんは、強制退寮になりました！</h2>
+  <button onclick="rest()">休憩する</button>`;
+  playGroundWrite(str);
+  return;
 }
 
 function rest() {
