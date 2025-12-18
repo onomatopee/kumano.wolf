@@ -5,6 +5,10 @@ function playGroundWrite(str) {
   playGround.innerHTML = str; 
 }
 
+function changeResult(str) {
+  document.getElementById("result").innerHTML = str; 
+}
+
 function gameStart() {
   const str = `<h2>人数入力</h2>
       <h3>フリーライダー陣営（FR）</h3>
@@ -17,8 +21,8 @@ function gameStart() {
       <p>デスドラ……霊媒師。夜をひとつ消せる</p><input type="number" id="death" value="0">
       <p>JK部長……騎士</p><input type="number" id="jk" value="0">
       <p>部長委員長……市民。役職の重複はない</p><input type="number" id="bucho" value="0">
-      <p>B3……お香を焚いて誰かのはたらきを2日止められる</p><input type="number" id="b3" value="0">
-      <p>議長団……採決拒否を提起できる</p><input type="number" id="chair" value="0">
+      <p>#B3……お香を焚いて誰かのはたらきを2日止められる</p><input type="number" id="b3" value="0">
+      <p>#議長団……採決拒否を提起できる</p><input type="number" id="chair" value="0">
       <br>
       <button onclick="getAttr();nameInput()">入力</button>
   `;

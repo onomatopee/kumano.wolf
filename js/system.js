@@ -11,8 +11,8 @@ function generateRyosei() {
 }
 
 function winCheck() {
-  if (attrNum["フリーライダー"] == 0) playGroundWrite(`<h1>SC勝利！！！</h1>`);
-  if (attrNum["SC長"]+attrNum["デスドラ"]+attrNum["JK部長"]+attrNum["部長委員長"]+attrNum["B3"]+attrNum["議長団"] == 0) playGroundWrite(`<h1>熊野寮滅亡！！！</h1>`);
+  if (attrNum["フリーライダー"] == 0) changeResult(`<h1>SC勝利！！</h1>`);
+  if (attrNum["SC長"]+attrNum["デスドラ"]+attrNum["JK部長"]+attrNum["部長委員長"]+attrNum["B3"]+attrNum["議長団"] == 0) changeResult(`<h1><span>熊野寮滅亡！！</span></h1>`);
 }
 
 function chooseClaimer() {
